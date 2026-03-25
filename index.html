@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конвертер валют</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <h1>Конвертер</h1>
+            <div class="header-controls">
+                <input type="date" id="date-picker" class="date-picker" aria-label="Выбор даты">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Переключить тему">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </header>
+
+        <main class="converter-card">
+            <div class="currency-list" id="currency-list">
+                <!-- Currency fields will be rendered here by JS -->
+            </div>
+
+            <button id="settings-btn" class="settings-btn">
+                <span>⚙️</span> Настройки (Добавить валюту)
+            </button>
+        </main>
+    </div>
+
+    <!-- Модальное окно настроек -->
+    <div id="settings-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Валюты</h2>
+                <button id="close-modal-btn" class="close-btn" aria-label="Закрыть">&times;</button>
+            </div>
+            <div class="modal-body" id="currency-checkboxes">
+                <!-- Checkboxes will be rendered by JS -->
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
