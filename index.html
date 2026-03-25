@@ -4,12 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Конвертер валют</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💱</text></svg>">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="app-container">
         <header class="header">
-            <h1>Конвертер</h1>
+            <div class="header-title">
+                <h1>Конвертер</h1>
+                <div class="help-tooltip-container">
+                    <button class="help-btn" aria-label="Справка">?</button>
+                    <div class="help-tooltip">
+                        <strong>Как пользоваться:</strong>
+                        <ul>
+                            <li>Введите сумму в любую валюту — остальные пересчитаются мгновенно.</li>
+                            <li>Нажмите на поле <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg> чтобы переместить его наверх.</li>
+                            <li>В настройках внизу добавьте новые валюты (USD, EUR, GBP и др.).</li>
+                            <li>Выберите дату, чтобы узнать исторические курсы валют.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <div class="header-controls">
                 <input type="date" id="date-picker" class="date-picker" aria-label="Выбор даты">
                 <button id="theme-toggle" class="theme-toggle" aria-label="Переключить тему">
