@@ -8,8 +8,50 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="app-container">
-        <header class="header">
+    <div class="layout-wrapper">
+        <aside class="side-instructions">
+            <div class="instructions-content">
+                <h2>Быстрый старт</h2>
+                <ul class="instructions-list">
+                    <li>
+                        <div class="instruction-icon">⚡</div>
+                        <div class="instruction-text">
+                            <strong>Умный пересчет</strong>
+                            <span>Введите сумму в любую валюту, и все остальные поля пересчитаются мгновенно.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="instruction-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="19" x2="12" y2="5"></line>
+                                <polyline points="5 12 12 5 19 12"></polyline>
+                            </svg>
+                        </div>
+                        <div class="instruction-text">
+                            <strong>Перемещение наверх</strong>
+                            <span>Нажмите на стрелку справа от поля, чтобы поднять нужную валюту на первое место.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="instruction-icon">⚙️</div>
+                        <div class="instruction-text">
+                            <strong>Новые валюты</strong>
+                            <span>Используйте кнопку настроек внизу, чтобы добавить USD, EUR, GBP и другие валюты.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="instruction-icon">📅</div>
+                        <div class="instruction-text">
+                            <strong>Машина времени</strong>
+                            <span>Выберите прошлую дату в календаре, чтобы узнать исторические курсы.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <div class="app-container">
+            <header class="header">
             <div class="header-title">
                 <h1>Конвертер</h1>
                 <div class="help-tooltip-container">
@@ -42,7 +84,8 @@
                 <span>⚙️</span> Настройки (Добавить валюту)
             </button>
         </main>
-    </div>
+    </div> <!-- .app-container -->
+    </div> <!-- .layout-wrapper -->
 
     <!-- Модальное окно настроек -->
     <div id="settings-modal" class="modal-overlay hidden">

@@ -56,15 +56,110 @@ body {
     color: var(--text-primary);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; /* Центрируем контент по вертикали */
     min-height: 100vh;
     padding: 20px;
     transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
+.layout-wrapper {
+    display: flex;
+    flex-direction: row-reverse; /* Инструкции слева: reverse потому что app-container идет вторым в DOM-порядке (для мобилок он будет первым если wrap) - или просто row если инструкции идут первыми */
+    /* Так как в HTML мы добавили aside ПЕРВЫМ, мы используем обычный row, чтобы aside был слева */
+    flex-direction: row;
+    gap: 40px;
+    width: 100%;
+    max-width: 900px; /* Достаточно места для двух колонок */
+    align-items: center; /* Инструкции и карточка по центру вертикально */
+    justify-content: center;
+}
+
 .app-container {
     width: 100%;
     max-width: 480px;
+    flex-shrink: 0;
+}
+
+/* --- Side Instructions --- */
+.side-instructions {
+    flex: 1;
+    max-width: 350px;
+    opacity: 0.9;
+    padding: 20px 0;
+}
+
+.instructions-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--primary-color);
+}
+
+.instructions-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.instructions-list li {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.instruction-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    flex-shrink: 0;
+    box-shadow: var(--shadow-sm);
+}
+
+.instruction-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.instruction-text strong {
+    font-size: 1rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.instruction-text span {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+/* Media Queries for Mobile/Tablets */
+@media (max-width: 850px) {
+    .layout-wrapper {
+        flex-direction: column; /* На маленьких экранах карточка сверху, инструкции снизу (aside надо пустить вниз) */
+        flex-direction: column-reverse; /* Если aside идет первым в DOM, мы его пускаем вниз под карточку */
+        gap: 32px;
+        align-items: center;
+    }
+
+    .side-instructions {
+        width: 100%;
+        max-width: 480px;
+        padding: 0;
+    }
+
+    .instructions-content h2 {
+        text-align: center;
+        font-size: 1.3rem;
+    }
 }
 
 /* Header */
